@@ -1,0 +1,8 @@
+fastapi
+litestar
+msgspec
+pydantic
+pydantic-settings
+rich
+structlog
+uvicorn

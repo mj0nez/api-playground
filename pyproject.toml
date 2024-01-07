@@ -1,0 +1,33 @@
+[project]
+name = "playground"
+authors = [{ name = "Marcel Johannesmann", email = "mj0nez@fn.de" }]
+description = "A plaground to evaluate API-frameworks."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["readme", "version"]
+
+
+[build-system]
+requires = ["hatchling>=1.8.0", "hatch-vcs", "hatch-fancy-pypi-readme"]
+build-backend = "hatchling.build"
+
+
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/markdown"
+fragments = [{ path = "README.md" }]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/playground/__version__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/tests"]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["src"]
+sources = ["src"]
