@@ -1,7 +1,10 @@
 ```
 hey -c 4 -m POST -D data/large-file.json  http://127.0.0.1:8000/pydantic
 ```
-Summary:
+
+## Run 1
+
+```Summary:
   Total:        43.6534 secs
   Slowest:      1.0351 secs
   Fastest:      0.3642 secs
@@ -43,11 +46,11 @@ Details (average, fastest, slowest):
 
 Status code distribution:
   [201] 200 responses
-
+```
 
 ## Run 2
 
-Summary:
+```Summary:
   Total:        42.4593 secs
   Slowest:      1.0788 secs
   Fastest:      0.3958 secs
@@ -89,5 +92,4 @@ Details (average, fastest, slowest):
 
 Status code distribution:
   [201] 200 responses
-
-
+```

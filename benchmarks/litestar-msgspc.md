@@ -1,9 +1,10 @@
 ```
 hey -c 4 -m POST -D data/large-file.json  http://127.0.0.1:8000/msgspec
 ```
+
 ## Run 1
 
-Summary:
+```Summary:
   Total:        29.6975 secs
   Slowest:      0.7466 secs
   Fastest:      0.2901 secs
@@ -44,11 +45,11 @@ Details (average, fastest, slowest):
 
 Status code distribution:
   [201] 200 responses
+```
 
+## Run 2
 
-## Run 2 
-
-Summary:
+```Summary:
   Total:        29.4436 secs
   Slowest:      0.7066 secs
   Fastest:      0.2992 secs
@@ -90,6 +91,4 @@ Details (average, fastest, slowest):
 
 Status code distribution:
   [201] 200 responses
-
-
-
+  ```
