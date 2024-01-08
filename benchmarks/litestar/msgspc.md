@@ -92,3 +92,50 @@ Details (average, fastest, slowest):
 Status code distribution:
   [201] 200 responses
   ```
+
+## Run 3
+
+hey -c 4 -m POST -D data/large-file.json  <http://127.0.0.1:8000/interactions/msgspec>
+
+```
+Summary:
+  Total:        29.2142 secs
+  Slowest:      0.6902 secs
+  Fastest:      0.3481 secs
+  Average:      0.5818 secs
+  Requests/sec: 6.8460
+
+  Total data:   400 bytes
+  Size/request: 2 bytes
+
+Response time histogram:
+  0.348 [1]     |
+  0.382 [0]     |
+  0.417 [0]     |
+  0.451 [2]     |■
+  0.485 [0]     |
+  0.519 [1]     |
+  0.553 [21]    |■■■■■■■■■
+  0.588 [97]    |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  0.622 [50]    |■■■■■■■■■■■■■■■■■■■■■      
+  0.656 [20]    |■■■■■■■■
+  0.690 [8]     |■■■
+
+
+Latency distribution:
+  10% in 0.5508 secs
+  25% in 0.5625 secs
+  50% in 0.5776 secs
+  75% in 0.5990 secs
+  90% in 0.6283 secs
+  95% in 0.6455 secs
+  99% in 0.6753 secs
+0000 secs
+  req write:    0.2351 secs, 0.0926 secs, 0.4690 secs        
+  resp wait:    0.3221 secs, 0.1280 secs, 0.5451 secs        
+  resp read:    0.0246 secs, 0.0004 secs, 0.1291 secs        
+
+Status code distribution:
+  [201] 200 responses
+```
+

@@ -93,3 +93,49 @@ Details (average, fastest, slowest):
 Status code distribution:
   [201] 200 responses
 ```
+
+## Run 3
+
+```
+Summary:
+  Total:        44.1290 secs
+  Slowest:      1.0799 secs
+  Fastest:      0.5218 secs
+  Average:      0.8789 secs
+  Requests/sec: 4.5322
+
+  Total data:   400 bytes
+  Size/request: 2 bytes
+
+Response time histogram:
+  0.522 [1]     |■
+  0.578 [1]     |■
+  0.633 [0]     |
+  0.689 [1]     |■
+  0.745 [0]     |
+  0.801 [1]     |■
+  0.857 [70]    |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  0.912 [75]    |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  0.968 [35]    |■■■■■■■■■■■■■■■■■■■        
+  1.024 [11]    |■■■■■■
+  1.080 [5]     |■■■
+
+
+Latency distribution:
+  10% in 0.8273 secs
+  25% in 0.8453 secs
+  50% in 0.8695 secs
+  75% in 0.9126 secs
+  90% in 0.9473 secs
+  95% in 0.9960 secs
+  99% in 1.0694 secs
+0000 secs
+  req write:    0.3117 secs, 0.0957 secs, 0.4868 secs        
+  resp wait:    0.5264 secs, 0.2176 secs, 0.8946 secs        
+  resp read:    0.0407 secs, 0.0003 secs, 0.2379 secs        
+
+Status code distribution:
+  [201] 200 responses
+```
+
+cl
