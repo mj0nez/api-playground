@@ -1,9 +1,6 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import structlog
-import uvicorn
 from litestar import Litestar
 from litestar.logging import StructLoggingConfig
 from litestar.middleware.logging import LoggingMiddlewareConfig
@@ -30,13 +27,3 @@ app = Litestar(
     debug=True,
     # middleware=[logging_middleware_config.middleware],
 )
-app_entrypoint = f"{Path(__file__).stem}:app"
-
-if __name__ == "__main__":
-    uvicorn.run(
-        app_entrypoint,
-        host="0.0.0.0",
-        port=8000,
-        log_level="debug",
-        # reload=True,
-    )
