@@ -26,6 +26,18 @@ class InteractionsController(Controller):
     async def post_interaction_msgspec(self, data: msgspec.Interactions) -> str:
         return "hi"
 
+    @post("/msgspec/roundtrip", dto=InteractionsMsgSpecDTO)
+    async def post_interaction_msgspec_with_serialization(
+        self, data: msgspec.Interactions
+    ) -> msgspec.Interactions:
+        return data
+
     @post("/pydantic", dto=InteractionsPydanticDTO, return_dto=None)
     async def post_interaction_pydantic(self, data: pydantic.Interactions) -> str:
         return "hi"
+
+    @post("/pydantic/roundtrip", dto=InteractionsPydanticDTO, return_dto=None)
+    async def post_interaction_pydantic_with_serialization(
+        self, data: pydantic.Interactions
+    ) -> pydantic.Interactions:
+        return data
