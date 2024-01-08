@@ -4,6 +4,7 @@ import structlog
 from litestar import Litestar
 from litestar.logging import StructLoggingConfig
 from litestar.middleware.logging import LoggingMiddlewareConfig
+# from litestar.openapi import OpenAPIConfig
 
 from playground.litestar_app.routes import (
     InteractionsController,
@@ -25,5 +26,6 @@ app = Litestar(
     ],
     logging_config=logging_config,
     debug=True,
+    # openapi_config=OpenAPIConfig(title="My API", version="1.0.0"),
     # middleware=[logging_middleware_config.middleware],
 )
