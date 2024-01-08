@@ -1,6 +1,10 @@
-from litestar import get, post
+from litestar import Controller, get, post
 
-from playground.litestar_app.dto import InteractionsMsgSpecDTO, InteractionsPydanticDTO, UserDTO
+from playground.litestar_app.dto import (
+    InteractionsMsgSpecDTO,
+    InteractionsPydanticDTO,
+    UserDTO,
+)
 from playground.models import msgspec, pydantic
 
 
@@ -15,11 +19,13 @@ async def get_user(data: msgspec.User) -> msgspec.User:
     return data
 
 
-@post("/msgspec", dto=InteractionsMsgSpecDTO, return_dto=None)
-async def post_interaction_msgspec(data: msgspec.Interactions) -> str:
-    return "hi"
+class InteractionsController(Controller):
+    path: str = "/interactions"
 
+    @post("/msgspec", dto=InteractionsMsgSpecDTO, return_dto=None)
+    async def post_interaction_msgspec(self, data: msgspec.Interactions) -> str:
+        return "hi"
 
-@post("/pydantic", dto=InteractionsPydanticDTO, return_dto=None)
-async def post_interaction_pydantic(data: pydantic.Interactions) -> str:
-    return "hi"
+    @post("/pydantic", dto=InteractionsPydanticDTO, return_dto=None)
+    async def post_interaction_pydantic(self, data: pydantic.Interactions) -> str:
+        return "hi"
